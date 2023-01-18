@@ -9,6 +9,14 @@ $(function() {
 
   var selected_lccns = {};
 
+  $('#lcnaf_service_loc').click(function() {
+    $('#js-subjects-toggle').show();
+  })
+
+  $('#lcsh_service_loc').click(function() {
+    $('#js-subjects-toggle').hide();
+  })
+
   var renderResults = function(json) {
     decorateResults(json);
 
@@ -55,8 +63,8 @@ $(function() {
 
   var removeSelected = function(lccn) {
     selected_lccns[lccn] = false;
-    $("[data-lccn="+lccn+"]", $selected).remove();
-    var $result = $("[data-lccn="+lccn+"]", $results);
+    $("[data-lccn='"+lccn+"']", $selected).remove();
+    var $result = $("[data-lccn='"+lccn+"']", $results);
     if ($result.length > 0) {
       $result.removeClass("hide");
       $(".alert-success", $result).removeClass("alert-success").addClass("alert-info");
@@ -113,7 +121,6 @@ $(function() {
     dataType: "json",
     type: "POST",
     beforeSubmit: function(data, $form, options) {
-
       data.push({
         name: 'lcnaf_service',
         value:   $("input[name='lcnaf_service']:checked").val(),
@@ -164,6 +171,7 @@ $(function() {
   }); 
 
   $selected.on("click", ".remove-selected", function(event) {
+    event.stopPropagation();
     var lccn = $(this).parent().data("lccn");
     removeSelected(lccn);
   });
@@ -179,7 +187,6 @@ $(function() {
       $('.btn', '.lcnaf-result').prop('disabled', function(i, v) { return !v; });
     }
   });
-
 
   $(window).resize(resizeSelectedBox);
   resizeSelectedBox();
