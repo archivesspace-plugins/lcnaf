@@ -1,53 +1,75 @@
-.lcnaf-result .alert button { 
-  position: relative;
-  top: -7px;
+.lcnaf-result summary,
+.lcnaf-result .lcnaf-marc {
+  border: 1px solid #bce8f1;
+  border-radius: 0.25rem;
+  background-color: #d9edf7;
+  color: #006f9b;
 }
 
-.lcnaf-result .alert-success {
-  position: relative;
-  top: -16px;
+.lcnaf-result summary {
+  padding-right: 100px;
 }
 
+.lcnaf-result.selected summary,
+.lcnaf-result.selected .lcnaf-marc {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border-color: #d0e6be;
+}
 
-.lcnaf-marc { 
-    height: 200px;
-    overflow: auto;
-    margin-top: 1em; 
-    margin-bottom: 1em;
-    border: 1px solid #ccc; /* fallback for IE7-8 */
-    border: 1px solid rgba(0,0,0,.15);
+.lcnaf-result.selected .select-record,
+.lcnaf-result [data-js-selected-label] {
+  display: none;
+}
+.lcnaf-result .select-record,
+.lcnaf-result.selected [data-js-selected-label] {
+  display: block;
+}
+
+.lcnaf-result > details[open] summary {
+  border-bottom-width: 0;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+.lcnaf-result > details[open] .lcnaf-marc {
+  border-top-width: 0;
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.lcnaf-marc {
+  height: 200px;
+  overflow: auto;
+  margin-bottom: 1rem;
 }
 
 .lcnaf-marc pre {
-    background-color: #fff;
-    border: none;
+  background-color: #fff;
+  border: none;
 }
 
 .record-pane {
-    min-height: 120px;
+  min-height: 120px;
 }
 
 .form-search,
 .selected-container {
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   padding: 10px;
 }
 
-
 #import-selected {
-    width: 100%;
+  width: 100%;
 }
 
 #selected {
-    margin: 10px 0 20px;
-    max-height: 200px;
-    overflow: auto;
+  margin: 10px 0 20px;
+  max-height: 200px;
+  overflow: auto;
 }
 
 .lcnaf-selected {
-    margin: 5px 0;
-    border-bottom: 1px solid #Fafafa;
-    padding: 5px 0;
+  margin: 5px 0;
+  border-bottom: 1px solid #fafafa;
+  padding: 5px 0;
 }

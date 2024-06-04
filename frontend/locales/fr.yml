@@ -10,7 +10,6 @@ fr:
         search: Rechercher
         import: Importer
         select: Sélectionner
-        show_record: Afficher la notice
       messages:
         none_selected: Aucun résultat sélectionné
         no_results: Pas de résultat pour la requête
@@ -23,4 +22,4 @@ fr:
         service_locked: Items déjà sélectionnés
         service_locked_message: Veuillez importer ou enlever les items sélectionnés avant de changer de service d'enregistrement
         service_warning: Ce plugin dépend de services tiers qui peuvent être ou non disponibles ou maintenus.
-      result_summary: "Page %{page} - Affichage des résultats %{first_record_index} à %{last_record_index} sur %{hit_count}"
+      result_summary: 'Page %{page} - Affichage des résultats %{first_record_index} à %{last_record_index} sur %{hit_count}'
