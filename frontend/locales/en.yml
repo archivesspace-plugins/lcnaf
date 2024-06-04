@@ -4,13 +4,12 @@ en:
       label: LCNAF Import
       authority: Authority Source
       search:
-        family_name: Primary Name 
+        family_name: Primary Name
         given_name: Rest of Name
       actions:
         search: Search
         import: Import
         select: Select
-        show_record: Show Record 
         import_subjects: Import Related Subjects?
       messages:
         none_selected: No Results Selected
@@ -24,4 +23,4 @@ en:
         service_locked: Items already selected
         service_locked_message: Please import or remove your selected items before switching record service
         service_warning: This plugin depends on 3rd party services that may or may not be available or supported.
-      result_summary: "Page %{page} - Showing results %{first_record_index} to %{last_record_index} of %{hit_count} matches"
+      result_summary: 'Page %{page} - Showing results %{first_record_index} to %{last_record_index} of %{hit_count} matches'

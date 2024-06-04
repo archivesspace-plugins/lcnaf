@@ -30,9 +30,9 @@ $(function () {
         })
       );
       if (selected_lccns[record.lccn]) {
-        $('.alert-success', $result).removeClass('hide');
+        $('.alert-success', $result).removeClass('d-none');
       } else {
-        $('button', $result).removeClass('hide');
+        $('button', $result).removeClass('d-none');
       }
       $results.append($result);
     });
@@ -78,17 +78,14 @@ $(function () {
   var removeSelected = function (lccn) {
     selected_lccns[lccn] = false;
     $("[data-lccn='" + lccn + "']", $selected).remove();
-    var $result = $("[data-lccn='" + lccn + "']", $results);
-    if ($result.length > 0) {
-      $result.removeClass('hide');
-      $('.alert-success', $result)
-        .removeClass('alert-success')
-        .addClass('alert-info');
-      $result.siblings('.alert').addClass('hide');
+    var $resultSelectRecordBtn = $("[data-lccn='" + lccn + "']", $results);
+    if ($resultSelectRecordBtn.length > 0) {
+      const $result = $resultSelectRecordBtn.closest('.lcnaf-result');
+      $result.removeClass('selected');
     }
 
     if (selectedLCCNs().length === 0) {
-      $selected.siblings('.alert-info').removeClass('hide');
+      $selected.siblings('.alert-info').removeClass('d-none');
       $('#import-selected').attr('disabled', 'disabled');
     }
   };
@@ -99,13 +96,9 @@ $(function () {
       AS.renderTemplate('template_lcnaf_selected', { lccn: lccn })
     );
 
-    $('.alert-success', $result).removeClass('hide');
-    $('button.select-record', $result).addClass('hide');
-    $('.alert-info', $result)
-      .removeClass('alert-info')
-      .addClass('alert-success');
+    $result.addClass('selected');
 
-    $selected.siblings('.alert-info').addClass('hide');
+    $selected.siblings('.alert-info').addClass('d-none');
     $('#import-selected').removeAttr('disabled', 'disabled');
   };
 
@@ -214,11 +207,6 @@ $(function () {
       } else {
         addSelected(lccn, $(this).closest('.lcnaf-result'));
       }
-    })
-    .on('click', '.lcnaf-result button.show-record', function (e) {
-      e.preventDefault();
-      $(this).siblings('.lcnaf-marc').removeClass('hide');
-      $(this).addClass('hide');
     });
 
   $selected.on('click', '.remove-selected', function (event) {
