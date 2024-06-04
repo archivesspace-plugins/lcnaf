@@ -1,4 +1,4 @@
-.lcnaf-result .alert button { 
+.lcnaf-result .alert button {
   position: relative;
   top: -7px;
 }
@@ -8,46 +8,44 @@
   top: -16px;
 }
 
-
-.lcnaf-marc { 
-    height: 200px;
-    overflow: auto;
-    margin-top: 1em; 
-    margin-bottom: 1em;
-    border: 1px solid #ccc; /* fallback for IE7-8 */
-    border: 1px solid rgba(0,0,0,.15);
+.lcnaf-marc {
+  height: 200px;
+  overflow: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc; /* fallback for IE7-8 */
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .lcnaf-marc pre {
-    background-color: #fff;
-    border: none;
+  background-color: #fff;
+  border: none;
 }
 
 .record-pane {
-    min-height: 120px;
+  min-height: 120px;
 }
 
 .form-search,
 .selected-container {
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   padding: 10px;
 }
 
-
 #import-selected {
-    width: 100%;
+  width: 100%;
 }
 
 #selected {
-    margin: 10px 0 20px;
-    max-height: 200px;
-    overflow: auto;
+  margin: 10px 0 20px;
+  max-height: 200px;
+  overflow: auto;
 }
 
 .lcnaf-selected {
-    margin: 5px 0;
-    border-bottom: 1px solid #Fafafa;
-    padding: 5px 0;
+  margin: 5px 0;
+  border-bottom: 1px solid #fafafa;
+  padding: 5px 0;
 }
