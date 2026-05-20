@@ -4,8 +4,7 @@ en:
       label: LCNAF Import
       authority: Authority Source
       search:
-        family_name: Primary Name
-        given_name: Rest of Name
+        family_name: Name or Subject
       actions:
         search: Search
         import: Import
