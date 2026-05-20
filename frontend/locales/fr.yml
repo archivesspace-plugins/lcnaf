@@ -4,7 +4,7 @@ fr:
       label: Import LCNAF
       authority: Source d'autorité
       search:
-        family_name: Nom ou suject
+        family_name: Nom ou sujet
       actions:
         search: Rechercher
         import: Importer
