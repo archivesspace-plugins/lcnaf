@@ -1,6 +1,11 @@
 require 'opensearcher'
 require 'securerandom'
 
+LOC_BASE     = (ENV['LCNAF_LOC_BASE_URL']&.chomp('/')) || 'https://id.loc.gov'
+LOC_SEARCH   = "#{LOC_BASE}/search/"
+LOC_NAMES    = "#{LOC_BASE}/authorities/names"
+LOC_SUBJECTS = "#{LOC_BASE}/authorities/subjects"
+
 class LcnafController < ApplicationController
 
   set_access_control "update_agent_record" => [:search, :index, :import]
@@ -78,10 +83,10 @@ class LcnafController < ApplicationController
 
   def searcher
     case params[:lcnaf_service]
-    when  'lcnaf'
-      OpenSearcher.new('https://id.loc.gov/search/', 'http://id.loc.gov/authorities/names')
+    when 'lcnaf'
+      OpenSearcher.new(LOC_SEARCH, LOC_NAMES)
     when 'lcsh'
-      OpenSearcher.new('https://id.loc.gov/search/', 'http://id.loc.gov/authorities/subjects')
+      OpenSearcher.new(LOC_SEARCH, LOC_SUBJECTS)
     end
   end
 end
