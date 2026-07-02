@@ -3,8 +3,12 @@ require 'securerandom'
 
 LOC_BASE     = (ENV['LCNAF_LOC_BASE_URL']&.chomp('/')) || 'https://id.loc.gov'
 LOC_SEARCH   = "#{LOC_BASE}/search/"
-LOC_NAMES    = "#{LOC_BASE}/authorities/names"
-LOC_SUBJECTS = "#{LOC_BASE}/authorities/subjects"
+# The names/subjects URIs double as the OpenSearch `cs:` (concept scheme) filter.
+# LC stores those scheme identifiers with the http scheme, so `cs:https://...`
+# matches nothing. Force http here even when the search endpoint is https.
+LOC_SCHEME_BASE = LOC_BASE.sub(/\Ahttps:/, 'http:')
+LOC_NAMES    = "#{LOC_SCHEME_BASE}/authorities/names"
+LOC_SUBJECTS = "#{LOC_SCHEME_BASE}/authorities/subjects"
 
 class LcnafController < ApplicationController
 
