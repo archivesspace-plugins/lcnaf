@@ -97,8 +97,8 @@
   <div class="row-fluid mb-3">
     <hr/>
     <div class="lcnaf-pagination text-center">
-      {if !at_start}<a href='<%= url_for :controller => :lcnaf, :action => :search %>${queryString}&page=${page - 1}&records_per_page=${records_per_page}' class="btn btn-sm btn-default"><%= I18n.t("pagination.previous").html_safe %> <%= I18n.t("pagination.previous_label") %></a>{/if}
-      {if !at_end}<a href='<%= url_for :controller => :lcnaf, :action => :search %>${queryString}&page=${page + 1}&records_per_page=${records_per_page}' class="btn btn-sm btn-default"><%= I18n.t("pagination.next_label") %> <%= I18n.t("pagination.next").html_safe %></a>{/if}
+      {if !at_start}<a href='<%= url_for :controller => :lcnaf, :action => :search %>${queryString}&page=${page - 1}&records_per_page=${records_per_page}' class="btn btn-sm btn-default">&laquo; <%= I18n.t("pagination.previous_label") %></a>{/if}
+      {if !at_end}<a href='<%= url_for :controller => :lcnaf, :action => :search %>${queryString}&page=${page + 1}&records_per_page=${records_per_page}' class="btn btn-sm btn-default"><%= I18n.t("pagination.next_label") %> &raquo;</a>{/if}
     </div>
   </div>
 --></div>
